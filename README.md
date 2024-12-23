@@ -1,4 +1,4 @@
-# Audio Classification Project
+# Audio Classification and Augmentation Project
 
 ## Overview
 This repository contains code for audio feature extraction and classification using various machine learning models. The code leverages audio datasets to build classifiers capable of identifying audio samples.
@@ -24,6 +24,10 @@ Ensure the following packages are installed:
 
 You can install the dependencies with:
 ```bash
+conda env create -f environment.yml
+```
+Alternatively, using pip:
+```bash
 pip install numpy pandas matplotlib seaborn librosa soundfile scipy IPython scikit-learn catboost tqdm
 ```
 
@@ -36,7 +40,7 @@ cd <repository-folder>
 
 2. Prepare the dataset:
 - Download the ESC-50 dataset (or any other audio dataset).
-- Place the audio files in the directory `./ESC-50/input/audio/`.
+- Place the audio files in the directory specified by the `INPUT_DIR` parameter in the configuration, or create those folders manually within the repository.
 
 3. Feature extraction:
 ```bash
@@ -85,6 +89,6 @@ my_grid_search.plot_confusion_matrix(X_validate, y_validate)
 
 ## Notes
 - Ensure the audio files are properly formatted (wav files).
-- Adjust model parameters for better performance.
+- Adjust parameters for better model performance.
 - This code is optimized for ESC-50 but can be adapted for other audio datasets.
 
